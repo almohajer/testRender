@@ -1,1 +1,1 @@
-FROM traffmonetizer/cli:latest
+FROM adminer:4.7.2
