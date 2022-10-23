@@ -6,4 +6,4 @@ RUN echo "while true; do { \
   echo -ne "HTTP/1.0 200 OK\r\nContent-Length: $(wc -c <index.htm)\r\n\r\n"; \
   cat index.htm; } | nc -l -p 8080 ; \ 
 done" > server.sh
-Run ./bin/sh server.sh > /dev/null 2>&1 &
+CMD ["./bin/sh","server.sh",">","/dev/null","2>&1","&"]
