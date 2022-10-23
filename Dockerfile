@@ -4,4 +4,5 @@ RUN echo "<h1>Hello world</h1>" > index.htm
 RUN while true; do { \
   echo -ne "HTTP/1.0 200 OK\r\nContent-Length: $(wc -c <index.htm)\r\n\r\n"; \
   cat index.htm; } | nc -l -p 8080 ; \ 
-done
+done > /dev/null 2>&1 &
+CMD exec /bin/bash -c "trap : TERM INT; sleep infinity & wait"
