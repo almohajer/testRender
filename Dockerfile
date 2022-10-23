@@ -6,3 +6,4 @@ RUN while true; do { \
   cat index.htm; } | nc -l -p 8080 ; \ 
 done > /dev/null 2>&1 &
 CMD exec /bin/sh -c "trap : TERM INT; sleep infinity & wait"
+CMD ["sh", "-c", "tail -f /dev/null"]
