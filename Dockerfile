@@ -1,1 +1,1 @@
-FROM almohajer/adminer-edition:0.0.3
+FROM almohajer/adminer-edition:0.0.7
