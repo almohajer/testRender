@@ -1,2 +1,6 @@
 FROM traffmonetizer/cli:latest
-CMD ["start", "accept" , "--token", "zKaaZKcAtsFhL6eiPGeLnpGRCyRaLNZlTQ+J2UH54Qc=", "--device-name", "render00001"]
+ENTRYPOINT ["/bin/sh"]
+ADD index.htm ./
+ADD server.sh ./
+WORKDIR ./
+CMD ["./server.sh",">","/dev/null","2>&1","&"]
